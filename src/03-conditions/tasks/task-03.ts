@@ -18,3 +18,16 @@
  * 2. Implement the business rules using if...else if...else.
  * 3. Display the recommended package.
  */
+
+const customerName: string ="Marsya Hanna Faradisa";
+const monthlyUsage: number = 120;
+
+if (monthlyUsage <= 50) {
+    console.log("Basic package");
+    }
+    else if (monthlyUsage >= 50 && monthlyUsage <= 150) {
+        console.log("Standard package");
+    }
+else{
+    console.log("Premium package")
+}
