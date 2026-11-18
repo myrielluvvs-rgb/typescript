@@ -16,31 +16,41 @@
  * 4. Create function to return number of passing students.
  */
 
-const scores = [
-  82,
-  91,
-  76,
-  88,
-  69,
-  94,
-  73,
-  85,
-  79,
-  97
+const salesData = [
+  125000,
+  780000,
+  250000,
+  99000,
+  540000,
+  670000,
+  180000,
+  450000,
+  310000,
+  820000
 ];
 
-function findHighestScore(scores: number[]): number {
-
+function calculateTotalSales(saleList: number[]): number {
+  return saleList.reduce((total, amount) => total + amount, 0);
 }
 
-function findLowestScore(scores: number[]): number {
-
+function findHighestTransaction(saleList: number[]): number {
+  return Math.max(...saleList);
 }
 
-function calculateAverage(scores: number[]): number {
-    
+function findLowestTransaction(saleList: number[]): number {
+  return Math.min(...saleList);
 }
 
-function countPassedStudents(scores: number[]): number {
-
+function calculateAverageSale(saleList: number[]): number {
+  return saleList.length === 0 ? 0 : calculateTotalSales(saleList) / saleList.length;
 }
+
+function countLargeTransactions(saleList: number[], minimumAmount: number): number {
+  return saleList.filter((amount) => amount > minimumAmount).length;
+}
+
+console.log(calculateTotalSales(salesData))
+console.log(findHighestTransaction(salesData))
+console.log(findLowestTransaction(salesData))
+console.log(calculateAverageSale(salesData))
+console.log(countLargeTransactions(salesData, 500000))
